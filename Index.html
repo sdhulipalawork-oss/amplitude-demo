@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Landing Page</title>
+
+  <!-- Amplitude -->
+  <script src="https://cdn.amplitude.com/script/1c793e9894805b13d63731dbe4345cd0.js"></script>
+  <script>
+    window.amplitude.init('1c793e9894805b13d63731dbe4345cd0', {
+      autocapture: true
+    });
+  </script>
+</head>
+
+<body style="font-family: Arial; text-align: center; margin-top: 100px;">
+
+  <h1>Product Analytics Demo</h1>
+  <p>This is my test landing page</p>
+
+  <button onclick="signup()">Sign Up</button>
+  <button onclick="demo()">Request Demo</button>
+
+  <script>
+    function signup() {
+      amplitude.track("CTA Clicked", {
+        cta_name: "Sign Up"
+      });
+      alert("Sign Up clicked");
+    }
+
+    function demo() {
+      amplitude.track("CTA Clicked", {
+        cta_name: "Request Demo"
+      });
+      alert("Demo clicked");
+    }
+  </script>
+
+</body>
+</html>
